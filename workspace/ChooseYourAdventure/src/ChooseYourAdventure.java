@@ -3,32 +3,32 @@ public class ChooseYourAdventure {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("You are in a creepy house!  Would you like to go \"upstairs\" or into the \"kitchen\"?");
+		System.out.println("You live alone in your apartment. You are fast asleep and somebody screams!  Would you like to go \"check\" outside or \"call\" someone?");
 		String response = scanner.nextLine();
-		if(response.equalsIgnoreCase("upstairs")){
-			System.out.println("Upstairs you see a hallway.  At the end of the hallway is the master \"bedroom\".  There is also a \"bathroom\" off the hallway.  Where would you like to go?");
+		if(response.equalsIgnoreCase("check")){
+			System.out.println("You reach your door and then hear a little girl laughing right behind the door. Do you want to \"open\" the door or \"lie\" down till morning? ");
 			response = scanner.nextLine();
-			if(response.equalsIgnoreCase("bedroom")){
-				System.out.println("You are in a plush bedroom, with expensive-looking hardwood furniture.  The bed is unmade.  In the back of the room, the closet door is ajar.  Would you like to open the door? (\"yes\" or \"no\")");
+			if(response.equalsIgnoreCase("open")){
+				System.out.println("There is no one there! But the bathroom light in on! Check there? Yes/No");
 				response = scanner.nextLine();
 				if(response.equalsIgnoreCase("yes")){
-					System.out.println("Congrats! You have found a treasure!");
+					System.out.println("Where did this doll come from?");
 				}
 				else if(response.equalsIgnoreCase("no")){
-					System.out.println("Well, then I guess you'll never know what was in there.  Thanks for playing, I'm tired of making nested if statements");
+					System.out.println("Ok then go back to sleep!");
 				}
 				else{
 					System.out.println("Incorrect choice");
 				}
 			}
-			else if(response.equalsIgnoreCase("bathroom")){
-				System.out.println("Would you like to open the bathroom cabinet?");
+			else if(response.equalsIgnoreCase("lie")){
+				System.out.println("How can you sleep with all of this going on? Want to call someone? Yes/No");
 				response = scanner.nextLine();
 				if(response.equalsIgnoreCase("yes")){
-					System.out.println("Congrats! You have found a treasure!");
+					System.out.println("The little girl picks up the phone from the other room and screams!");
 				}
 				else if(response.equalsIgnoreCase("no")){
-					System.out.println("Well, then I guess you'll never know what was in there.  Thanks for playing, I'm tired of making nested if statements");
+					System.out.println("Come on! Do something!");
 				}
 				else{
 					System.out.println("Incorrect choice");
@@ -38,30 +38,30 @@ public class ChooseYourAdventure {
 				System.out.println("Incorrect choice");
 			}
 		}
-		else if(response.equalsIgnoreCase("kitchen")){
-			System.out.println("There is a long countertop with dirty dishes everywhere.  Off to one side there is, as you'd expect, a refrigerator. You may open the \"refrigerator\" or look in a \"cabinet\".");
+		else if(response.equalsIgnoreCase("call")){
+			System.out.println("Call doesnt go through! Want to check the \"kitchen\" or the \"living room\" phone?");
 			response = scanner.nextLine();
-			if(response.equalsIgnoreCase("refrigerator")){
-				System.out.println("Inside the refrigerator you see food and stuff.  It looks pretty nasty. Would you like to eat some of the food? (\"yes\" or \"no\")");
+			if(response.equalsIgnoreCase("kitchen")){
+				System.out.println("The kitchen light in on! Check there? Yes/No");
 				response = scanner.nextLine();
 				if(response.equalsIgnoreCase("yes")){
-					System.out.println("Congrats! You have found tasty food!");
+					System.out.println("You see someone there!");
 				}
 				else if(response.equalsIgnoreCase("no")){
-					System.out.println("You die of starvation... eventually.");
+					System.out.println("Ok then go to sleep.");
 				}
 				else{
 					System.out.println("Incorrect choice");
 				}
 			}
-			else if(response.equalsIgnoreCase("cabinet")){
-				System.out.println("Would you like to open the cabinet?");
+			else if(response.equalsIgnoreCase("living room")){
+				System.out.println("The TV was on! Phew! Turn it off? Yes/no");
 				response = scanner.nextLine();
 				if(response.equalsIgnoreCase("yes")){
-					System.out.println("Congrats! You have found tasty food!");
+					System.out.println("It just turned itself on again!");
 				}
 				else if(response.equalsIgnoreCase("no")){
-					System.out.println("Well, then I guess you'll never know what was in there.  Thanks for playing, I'm tired of making nested if statements");
+					System.out.println("Well you should turn off the TV and go to sleep.");
 				}
 				else{
 					System.out.println("Incorrect choice");
