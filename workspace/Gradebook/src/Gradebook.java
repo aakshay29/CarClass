@@ -7,6 +7,7 @@ public class Gradebook {
 		Scanner sc = new Scanner(System.in);
 		
 		double maleAvg = 0, femaleAvg = 0, econAvg = 0, csAvg = 0, eeAvg = 0, mdAvg = 0, dcAvg = 0, vaAvg = 0, overallAvg = 0;	
+		int maleTot = 0, femaleTot = 0, econTot = 0, csTot = 0, eeTot = 0, mdTot = 0, dcTot = 0, vaTot = 0, overallTot = 0;	
 		String[] name = new String[100];
 		String[] grade = new String[100];
 		String[] gender = new String[100];
@@ -35,69 +36,59 @@ public class Gradebook {
 				break;		
 		}
 		int maleCounter = 0, femaleCounter = 0, dcCounter = 0, vaCounter = 0, mdCounter = 0, eeCounter = 0, csCounter = 0, econCounter = 0;
-		for(int i = 0; i < counter; i++){	
+		for(int i = 0; i < counter; i++){			
 			
-			//int internalCounter = 0;
-			
-			overallAvg += score[i];
+			overallTot += score[i];			
 			if(counter != 0)
-				overallAvg = overallAvg/counter;
+				overallAvg = overallTot/counter;
 								
 			if(gender[i].equalsIgnoreCase("M")){
 				maleCounter++;
-				maleAvg += score[i];				
+				maleTot += score[i];
+				maleAvg = maleTot/maleCounter;
 			}
-			if(maleCounter != 0)
-				maleAvg = maleAvg/maleCounter;
 			
 			if(gender[i].equalsIgnoreCase("F")){
 				femaleCounter++;
-				femaleAvg += score[i];				
-			}
-			if(femaleCounter != 0)
-				femaleAvg = femaleAvg/femaleCounter;
+				femaleTot += score[i];	
+				femaleAvg = femaleTot/femaleCounter;
+			}		
 			
 			if(major[i].equalsIgnoreCase("econ")){
 				econCounter++;
-				econAvg += score[i];			
+				econTot += score[i];	
+				econAvg = econTot/econCounter;
 			}
-			if(econCounter != 0)
-				econAvg = econAvg/econCounter;
-			
+							
 			if(major[i].equalsIgnoreCase("cs")){
 				csCounter++;
-				csAvg += score[i];				
-			}
-			if(csCounter != 0)
-				csAvg = csAvg/csCounter;
+				csTot += score[i];	
+				csAvg = csTot/csCounter;
+			}			
 			
 			if(major[i].equalsIgnoreCase("ee")){
 				eeCounter++;
-				eeAvg += score[i];			
+				eeTot += score[i];	
+				eeAvg = eeTot/eeCounter;
 			}
-			if(eeCounter != 0)
-				eeAvg = eeAvg/eeCounter;
-			
+							
 			if(state[i].equalsIgnoreCase("va")){
 				vaCounter++;
-				vaAvg += score[i];			
+				vaTot += score[i];	
+				vaAvg = vaTot/vaCounter;
 			}
-			if(vaCounter != 0)
-				vaAvg = vaAvg/vaCounter;
 			
 			if(state[i].equalsIgnoreCase("md")){
 				mdCounter++;
-				mdAvg += score[i];				
+				mdTot += score[i];
+				mdAvg = mdTot/mdCounter;
 			}
-			if(mdCounter != 0)
-				mdAvg = mdAvg/mdCounter;
 			
 			if(state[i].equalsIgnoreCase("dc")){
 				dcCounter++;
-				dcAvg += score[i];			
-			}
-			if(dcCounter != 0)
-				dcAvg = dcAvg/dcCounter;			
+				dcTot += score[i];	
+				dcAvg = dcTot/dcCounter;		
+			}	
 		}
 		System.out.println("Number of students: " + counter);
 		System.out.println("Overall Average: " + overallAvg);
