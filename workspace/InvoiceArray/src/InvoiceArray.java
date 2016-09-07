@@ -21,7 +21,8 @@ public class InvoiceArray {
 			System.out.println("Price #" + number2 + ": " + myPrices[i]);
 		}
 		System.out.println("Subtotal: " + total);
-		System.out.println("Tax: " + taxrate);
+		String formattedTaxrate = String.format("%.02f", taxrate);
+		System.out.println("Tax: " + formattedTaxrate);
 		double grandtotal = total + (total*taxrate);
 		System.out.println("Grandtotal: " + grandtotal);
 		
