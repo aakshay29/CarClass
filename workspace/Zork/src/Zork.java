@@ -40,6 +40,7 @@ public class Zork {
 			totalMoney = 0;
 			System.out.println(
 					"There is a burglar in this room who has a knife. You lose all your money in order to protect your life.");
+			System.out.println("Your total money now is: $" + totalMoney);
 		}
 	}
 
@@ -97,6 +98,7 @@ public class Zork {
 					System.out.println("You can now \"Enter\" the secret room!");
 					response = sc.nextLine();
 					if (response.equalsIgnoreCase("Enter")) {
+						checkLamp(8);
 						visitRoom8();
 					}
 				} else {
@@ -113,11 +115,13 @@ public class Zork {
 				pathFinder += "\nYou went to the front room. ";
 				payMoney(2);
 				checkForBurglar(2);
+				checkLamp(2);
 				visitRoom2();
 			} else {
 				pathFinder += "\nYou entered the Dining Room. ";
 				payMoney(5);
 				checkForBurglar(5);
+				checkLamp(5);
 				visitRoom5();
 			}
 			sc.close();
@@ -259,6 +263,7 @@ public class Zork {
 			pathFinder += "\nYou went to the front room.";
 			payMoney(2);
 			checkForBurglar(2);
+			checkLamp(2);
 			visitRoom2();
 		} else {
 			Random rnd = new Random();
@@ -268,7 +273,7 @@ public class Zork {
 			} else {
 				System.out.println("You have exited the house, stay safe!");
 			}
-			System.out.println("Log: " + pathFinder + "\n\nYour total money: " + totalMoney + "\n\nYour stash: " + stash);
+			System.out.println("\nLog: " + pathFinder + "\n\nYour total money: " + totalMoney + "\n\nYour stash: " + stash);
 		}
 		sc.close();
 	}
@@ -283,17 +288,20 @@ public class Zork {
 			pathFinder += "\nYou entered the Foyer and saw dead scorpions. ";
 			System.out.println("Your total money now is: $" + totalMoney);
 			checkForBurglar(1);
+			checkLamp(1);
 			visitRoom1();
 		}
 		if (response == 2) {
 			pathFinder += "\nYou entered the Library and saw spiders.";
 			payMoney(3);
 			checkForBurglar(3);
+			checkLamp(3);
 			visitRoom3();
 		} else {
 			pathFinder += "\nYou entered the Kitchen and saw bats. ";
 			payMoney(4);
 			checkForBurglar(4);
+			checkLamp(4);
 			visitRoom4();
 		}
 		sc.close();
@@ -301,22 +309,6 @@ public class Zork {
 
 	public static void visitRoom3() {
 		illuminatedRoom(3);
-		// Scanner sc = new Scanner(System.in);
-		// System.out.println("You are standing in the library. You see a bunch
-		// of spiders. {You can (1)exit to the east or (2)exit to the north}");
-		// int response = sc.nextInt();
-		// if (response == 1) {
-		// pathFinder += "\nYou went to the front room. ";
-		// payMoney(2);
-		// checkForBurglar(2);
-		// visitRoom2();
-		// } else {
-		// pathFinder += "\nYou entered the Dining Room. ";
-		// payMoney(5);
-		// checkForBurglar(5);
-		// visitRoom5();
-		// }
-		// sc.close();
 	}
 
 	public static void visitRoom4() {
@@ -329,11 +321,13 @@ public class Zork {
 			pathFinder += "\nYou went to the front room.";
 			payMoney(2);
 			checkForBurglar(2);
+			checkLamp(2);
 			visitRoom2();
 		} else {
 			pathFinder += "\nYou entered the Parlor and saw a treasure chest. ";
 			payMoney(7);
 			checkForBurglar(7);
+			checkLamp(7);
 			visitRoom7();
 		}
 		sc.close();
@@ -349,6 +343,7 @@ public class Zork {
 			pathFinder += "\nYou entered the Library and saw spiders. ";
 			payMoney(3);
 			checkForBurglar(3);
+			checkLamp(3);
 			visitRoom3();
 		} else {
 			Random rnd = new Random();
@@ -358,12 +353,14 @@ public class Zork {
 				pathFinder += "\nYou entered the Parlor and saw a treasure chest. ";
 				payMoney(7);
 				checkForBurglar(7);
+				checkLamp(7);
 				visitRoom7();
 			} else {
 				System.out.println("What? You came to room 2!");
 				pathFinder += "\nYou went to the front room.";
 				payMoney(2);
 				checkForBurglar(2);
+				checkLamp(2);
 				visitRoom2();
 			}
 		}
@@ -373,7 +370,7 @@ public class Zork {
 	public static void visitRoom6() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println(
-				"You are standing in the vault room. You see 3 walking skeletons. {You can quickly (1)exit to the east}");
+				"You are standing in the vault room. You see 3 walking skeletons. {You can quickly (1)exit to the east or (2) exit to north}");
 		int response = sc.nextInt();
 		if (unlocked = false) {
 			if (response == 1) {
@@ -383,18 +380,30 @@ public class Zork {
 					pathFinder += "\nYou unlocked and entered the Secret Room and see piles of gold. ";
 					payMoney(8);
 					checkForBurglar(8);
+					checkLamp(8);
 					visitRoom8();
 				} else {
 					pathFinder += "\nYou entered the Parlor and see a treasure chest. ";
 					payMoney(7);
 					checkForBurglar(7);
+					checkLamp(7);
 					visitRoom7();
 				}
 			}
-		} else {
+			else if (response == 2) {
+				System.out.println("What? You came to room 2!");
+				pathFinder += "\nYou went to the front room.";
+				payMoney(2);
+				checkForBurglar(2);
+				checkLamp(2);
+				visitRoom2();
+			}
+		} 
+		else {
 			pathFinder += "\nYou entered the Secret Room and see piles of gold. ";
 			payMoney(8);
 			checkForBurglar(8);
+			checkLamp(8);
 			visitRoom8();
 		}
 		sc.close();
@@ -410,11 +419,13 @@ public class Zork {
 			pathFinder += "\nYou entered the Vault and see 3 walking skeletons. ";
 			payMoney(6);
 			checkForBurglar(6);
+			checkLamp(6);
 			visitRoom6();
 		} else {
 			pathFinder += "\nYou entered the Kitchen and see bats. ";
 			payMoney(4);
 			checkForBurglar(4);
+			checkLamp(4);
 			visitRoom4();
 		}
 		sc.close();
@@ -430,6 +441,7 @@ public class Zork {
 			pathFinder += "\nYou entered the Vault and see 3 walking skeletons. ";
 			payMoney(6);
 			checkForBurglar(6);
+			checkLamp(6);
 			visitRoom6();
 		} else {
 			Random rnd = new Random();
@@ -439,7 +451,7 @@ public class Zork {
 			} else {
 				System.out.println("You have exited the house, stay safe!");
 			}
-			System.out.println("Log: " + pathFinder + "\n\nYour total money: " + totalMoney + "\n\nYour stash: " + stash);
+			System.out.println("\nLog: " + pathFinder + "\n\nYour total money: " + totalMoney + "\n\nYour stash: " + stash);
 		}
 		sc.close();
 	}
