@@ -12,21 +12,28 @@ public class Zork {
 	static boolean money7 = false;
 	static boolean money8 = false;
 	static int totalMoney = 0;
+	static boolean burgled = false;
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to Zork.");
-
-		// Random rnd = new Random();
-		// int randomInt = 2 + rnd.nextInt(8);
 
 		pathFinder += "You entered the Foyer. ";
 		visitRoom1();
 	}
 
+	public static void checkForBurglar(int roomNumber) {
+		Random rnd = new Random();
+		int burglarRoom = 2 + rnd.nextInt(8);
+		if(roomNumber == burglarRoom){
+			burgled = true;
+			totalMoney = 0;
+			System.out.println("There is aburglar in this room who has a knife. You lose all your money in order to protect your life.");
+		}
+	}
+	
 	public static void visitRoom1() {
 		Scanner sc = new Scanner(System.in);
-		System.out.println(
-				"You are standing in the foyer of an old house. You see a dead scorpion. {You can (1)exit to the north or press (2) to quit}");
+		System.out.println("You are standing in the foyer of an old house. You see a dead scorpion. {You can (1)exit to the north or press (2) to quit}");
 		int response = sc.nextInt();
 		if (response == 1) {
 			if (money2 = false) {
@@ -34,9 +41,13 @@ public class Zork {
 				totalMoney += (1 + rnd.nextInt(1000));
 				money2 = true;
 				pathFinder += "You went to the front room.";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(2);
 				visitRoom2();
 			} else {
 				pathFinder += "You went to the front room.";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(2);
 				visitRoom2();
 			}
 		} else {
@@ -59,6 +70,8 @@ public class Zork {
 		int response = sc.nextInt();
 		if (response == 1) {
 			pathFinder += "You entered the Foyer. ";
+			System.out.println("Your total money now is: " + totalMoney);
+			checkForBurglar(1);
 			visitRoom1();
 		}
 		if (response == 2) {
@@ -67,9 +80,13 @@ public class Zork {
 				totalMoney += (1 + rnd.nextInt(1000));
 				money3 = true;
 				pathFinder += "You entered the Library. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(3);
 				visitRoom3();
 			} else {
 				pathFinder += "You entered the Library. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(3);
 				visitRoom3();
 			}
 		} else {
@@ -78,9 +95,13 @@ public class Zork {
 				totalMoney += (1 + rnd.nextInt(1000));
 				money4 = true;
 				pathFinder += "You entered the Kitchen. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(4);
 				visitRoom4();
 			} else {
 				pathFinder += "You entered the Kitchen. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(4);
 				visitRoom4();
 			}
 		}
@@ -98,9 +119,13 @@ public class Zork {
 				totalMoney += (1 + rnd.nextInt(1000));
 				money2 = true;
 				pathFinder += "You went to the front room. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(2);
 				visitRoom2();
 			} else {
 				pathFinder += "You went to the front room. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(2);
 				visitRoom2();
 			}
 		} else {
@@ -109,9 +134,13 @@ public class Zork {
 				totalMoney += (1 + rnd.nextInt(1000));
 				money5 = true;
 				pathFinder += "You entered the Dining Room. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(5);
 				visitRoom5();
 			} else {
 				pathFinder += "You entered the Dining Room. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(5);
 				visitRoom5();
 			}
 		}
@@ -129,9 +158,13 @@ public class Zork {
 				totalMoney += (1 + rnd.nextInt(1000));
 				money2 = true;
 				pathFinder += "You went to the front room.";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(2);
 				visitRoom2();
 			} else {
 				pathFinder += "You went to the front room.";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(2);
 				visitRoom2();
 			}
 		} else {
@@ -140,9 +173,13 @@ public class Zork {
 				totalMoney += (1 + rnd.nextInt(1000));
 				money7 = true;
 				pathFinder += "You entered the Parlor. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(7);
 				visitRoom7();
 			} else {
 				pathFinder += "You entered the Parlor. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(7);
 				visitRoom7();
 			}
 		}
@@ -160,9 +197,13 @@ public class Zork {
 				totalMoney += (1 + rnd.nextInt(1000));
 				money3 = true;
 				pathFinder += "You entered the Library. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(3);
 				visitRoom3();
 			} else {
 				pathFinder += "You entered the Library. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(3);
 				visitRoom3();
 			}
 		} else {
@@ -175,9 +216,13 @@ public class Zork {
 					totalMoney += (1 + rnd2.nextInt(1000));
 					money7 = true;
 					pathFinder += "You entered the Parlor. ";
+					System.out.println("Your total money now is: " + totalMoney);
+					checkForBurglar(7);
 					visitRoom7();
 				} else {
 					pathFinder += "You entered the Parlor. ";
+					System.out.println("Your total money now is: " + totalMoney);
+					checkForBurglar(7);
 					visitRoom7();
 				}
 			} else {
@@ -187,9 +232,13 @@ public class Zork {
 					totalMoney += (1 + rnd2.nextInt(1000));
 					money2 = true;
 					pathFinder += "You went to the front room.";
+					System.out.println("Your total money now is: " + totalMoney);
+					checkForBurglar(2);
 					visitRoom2();
 				} else {
 					pathFinder += "You went to the front room.";
+					System.out.println("Your total money now is: " + totalMoney);
+					checkForBurglar(2);
 					visitRoom2();
 				}
 			}
@@ -212,9 +261,13 @@ public class Zork {
 						totalMoney += (1 + rnd2.nextInt(1000));
 						money8 = true;
 						pathFinder += "You unlocked and entered the Secret Room. ";
+						System.out.println("Your total money now is: " + totalMoney);
+						checkForBurglar(8);
 						visitRoom8();
 					} else {
 						pathFinder += "You unlocked and entered the Secret Room. ";
+						System.out.println("Your total money now is: " + totalMoney);
+						checkForBurglar(8);
 						visitRoom8();
 					}
 				} else {
@@ -223,15 +276,21 @@ public class Zork {
 						totalMoney += (1 + rnd2.nextInt(1000));
 						money7 = true;
 						pathFinder += "You entered the Parlor. ";
+						System.out.println("Your total money now is: " + totalMoney);
+						checkForBurglar(7);
 						visitRoom7();
 					} else {
 						pathFinder += "You entered the Parlor. ";
+						System.out.println("Your total money now is: " + totalMoney);
+						checkForBurglar(7);
 						visitRoom7();
 					}
 				}
 			}
 		} else {
 			pathFinder += "You entered the Secret Room. ";
+			System.out.println("Your total money now is: " + totalMoney);
+			checkForBurglar(8);
 			visitRoom8();
 		}
 		sc.close();
@@ -248,9 +307,13 @@ public class Zork {
 				totalMoney += (1 + rnd2.nextInt(1000));
 				money6 = true;
 				pathFinder += "You entered the Vault. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(6);
 				visitRoom6();
 			} else {
 				pathFinder += "You entered the Vault. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(6);
 				visitRoom6();
 			}
 		} else {
@@ -259,9 +322,13 @@ public class Zork {
 				totalMoney += (1 + rnd2.nextInt(1000));
 				money4 = true;
 				pathFinder += "You entered the Kitchen. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(4);
 				visitRoom4();
 			} else {
 				pathFinder += "You entered the Kitchen. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(4);
 				visitRoom4();
 			}
 		}
@@ -279,9 +346,13 @@ public class Zork {
 				totalMoney += (1 + rnd2.nextInt(1000));
 				money6 = true;
 				pathFinder += "You entered the Vault. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(6);
 				visitRoom6();
 			} else {
 				pathFinder += "You entered the Vault. ";
+				System.out.println("Your total money now is: " + totalMoney);
+				checkForBurglar(6);
 				visitRoom6();
 			}
 		} else {
