@@ -12,10 +12,13 @@ public class Division {
 		b = input.nextInt();
 		try {
 			result = a / b;
-		} catch (Exception ex) {
+		} 
+		catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}
-
+		finally {
+		    System.out.println("finally block will execute.");
+		}
 		System.out.println("Result = " + result);
 
 		input.close();
