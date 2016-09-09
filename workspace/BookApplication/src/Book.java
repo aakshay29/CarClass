@@ -5,7 +5,9 @@ public class Book {
 	private String author;
 	private String description;
 	private int price;
+	private int totalPrice;
 	private boolean isInStock;
+		
 	
 	public void setTitle( String bookTitle ) {
 		title = bookTitle;
@@ -22,6 +24,9 @@ public class Book {
 	public void setIsInStock( boolean bookIsInStock ) {
 		isInStock = bookIsInStock;
 	} 
+	public void setTotal( int bookPrice ) {
+		totalPrice = bookPrice;
+	} 
 	
 	public String getTitle() {
 		return title;
@@ -37,6 +42,9 @@ public class Book {
 	} 
 	public boolean getIsInStock() {
 		return isInStock;
+	} 
+	public int getTotal() {
+		return totalPrice;
 	} 
 	
 	public Book(){
