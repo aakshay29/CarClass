@@ -40,6 +40,8 @@ public class Main {
 		print("Zip: " + ab.getZip());
 		print("Phone: " + ab.getPhone());
 		print("Email: " + ab.getEmail());
+		
+		print("\nMailing Address:\n" + ab.printAddress());
 	}
 	public static void print(String input){
 		System.out.println(input);

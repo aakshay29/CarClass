@@ -10,7 +10,11 @@ public class AddressBook {
 	static String zip;
 	static String phone;
 	static String email;
-
+	
+	public String printAddress(){
+		return name + "\n" + address + ", " + city + ", " + state + "-" + zip + "\n" + phone + "\n" + email;
+	}
+	
 	public void setName(String inputName){
 		name = inputName;
 	}	
