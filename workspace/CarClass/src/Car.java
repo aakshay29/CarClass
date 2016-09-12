@@ -9,6 +9,14 @@ public class Car extends Vehicle {
 	private boolean stop;
 	private boolean accelerate;
 	private boolean slowDown;
+	private String name;
+	
+	public String getPersonName() {
+		Person per = new Person();
+		name = per.getName();
+		return name;
+	} 
+	
 	
 	public void setMileage(int inputMileage) {
 		mileage = inputMileage;

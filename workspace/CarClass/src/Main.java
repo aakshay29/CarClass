@@ -10,7 +10,7 @@ public class Main {
 		car.setStop(false);
 		car.setStart(true);
 		
-		System.out.println("Start car: " + car.getStart() + "\nAcceleration: " + car.getAccelerate() + "\nSpeed: " + car.getSpeed() + "\nSlow Down: " + car.getSlowDown() + "\nStop: " + car.getStop());
+		System.out.println("Start car: " + car.getStart() + "\nStarted by: " + car.getPersonName() +  "\nAcceleration: " + car.getAccelerate() + "\nSpeed: " + car.getSpeed() + "\nSlow Down: " + car.getSlowDown() + "\nStop: " + car.getStop());
 	}
 
 }
